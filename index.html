@@ -6,101 +6,142 @@
     <title>Invoice</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             margin: 0;
             padding: 20px;
-            background-color: #f7f7f7;
-        }
-        .invoice-box {
-            max-width: 800px;
-            margin: auto;
-            padding: 30px;
-            border: 1px solid #eee;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
             background-color: #fff;
+            line-height: 0.5;
+
         }
-        .invoice-box h2 {
-            text-align: center;
-            margin-bottom: 40px;
+        .invoice {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            border: 1px dashed #333;
+            line-height: 1.6;
+            font-size: 14px;
         }
-        .invoice-box table {
+        .invoice .header {
+            margin-bottom: 20px;
+        }
+        .invoice .header strong {
+            display: block;
+        }
+        .invoice .header .invoice-number {
+            margin-top: 10px;
+        }
+        .invoice .details, .invoice .totals {
+            margin-bottom: 20px;
+        }
+        .invoice .totals td {
+            padding: 5px 0;
+        }
+        .invoice .item-list, .invoice .scu-information {
+            border-top: 1px dashed #333;
+            border-bottom: 1px dashed #333;
+            padding: 10px 0;
+            margin: 20px 0;
+        }
+        .invoice .item-list table {
             width: 100%;
-            line-height: inherit;
-            text-align: left;
             border-collapse: collapse;
         }
-        .invoice-box table td {
-            padding: 8px;
-            vertical-align: top;
+        .invoice .item-list td {
+            padding: 5px 0;
         }
-        .invoice-box table tr td:nth-child(2) {
-            text-align: right;
+        .invoice .item-list .item-description {
+            padding-left: 20px;
         }
-        .invoice-box table tr.top table td {
-            padding-bottom: 20px;
+        .invoice .scu-information td {
+            padding: 5px 0;
         }
-        .invoice-box table tr.heading td {
-            background-color: #eee;
-            border-bottom: 1px solid #ddd;
+        .invoice .footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .invoice .footer .signature {
+            margin-top: 20px;
+            display: block;
+        }
+        tr{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .totals table{
+            width: 100%;
             font-weight: bold;
-        }
-        .invoice-box table tr.item td {
-            border-bottom: 1px solid #eee;
-        }
-        .invoice-box table tr.item.last td {
-            border-bottom: none;
-        }
-        .invoice-box table tr.total td:nth-child(2) {
-            border-top: 2px solid #eee;
-            font-weight: bold;
+            line-height: 0.5;
+            /* background-color: red; */
         }
     </style>
 </head>
 <body>
-    <div class="invoice-box">
-        <h2>Invoice</h2>
-        <table>
-            <tr class="top">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td>
-                                Invoice #: 123<br>
-                                Created: August 19, 2024<br>
-                                Due: September 19, 2024
-                            </td>
-                            <td>
-                                <strong>ABC Laptops</strong><br>
-                                1234 Main Street<br>
-                                City, State, ZIP Code<br>
-                                Phone: (555) 555-5555
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            
-            <tr class="heading">
-                <td>Laptop Model</td>
-                <td>Price</td>
-            </tr>
-            
-            <tr class="item">
-                <td>MacBook Pro</td>
-                <td>KSH 116,000.00</td>
-            </tr>
-            
-            <tr class="item">
-                <td>Dell XPS 13</td>
-                <td>KSH 83, 000</td>
-            </tr>
-            
-          
-            <tr class="total">
-                <td></td>
-                <td>Total: KSH 199,000.00</td>
-            </tr>
-        </table>
+    <div class="invoice">
+        <div class="header">
+            <strong>Joseph Muia Musyimi</strong>
+            <strong>PIN: A018229078G<br></strong>
+                <strong>Invoice Number : KRACU0200035493/10</strong>
+        </div>
+        <div style="border-top: 1px dashed #333; padding-bottom: 1vh;"></div>
+        <div class="details">
+            CLIENT PIN : A001195700D<br>
+            CLIENT NAME : CAROLINE MAKENA GITHONGA<br>
+            WATER DISPENSER ELECTRIC KETTLE (3) RECHARGEABLE FUN AND HP ELITE BOOK LAPTOP<br>
+            KE2NTX0N00010 116000 x 1<br>
+        </div>
+        <div style="border-top: 1px dashed #333; padding-bottom: 1vh; "></div>
+
+        <div class="totals">
+            <table>
+                <tr><td>TOTAL</td><td>199,000</td></tr>
+                <tr><td>TOTAL AMOUNT A-Ex</td><td>0</td></tr>
+                <tr><td>TOTAL AMOUNT B-16%</td><td>100,000</td></tr>
+                <tr><td>TOTAL AMOUNT C-0%</td><td>0</td></tr>
+                <tr><td>TOTAL AMOUNT E-8%</td><td>0</td></tr>
+                <tr><td>TOTAL TAX-A-Ex</td><td>0</td></tr>
+                <tr><td>TOTAL TAX-B-16%</td><td>16,000</td></tr>
+                <tr><td>TOTAL TAX-C-0%</td><td>0</td></tr>
+                <tr><td>TOTAL TAX-E-8%</td><td>0</td></tr>
+                <tr><td>TOTAL TAX</td><td>16,000</td></tr>
+            </table>
+        </div>
+        <div class="item-list">
+            <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                <p>MOBILE MONEY</p>
+                <p> 116,000</p>
+            </div>
+    
+
+        <div style="border-top: 1px dashed #333; padding-bottom: 0vh;"></div>
+
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+
+          <p>ITEM NUMBER</p>
+           
+            <p> 1</p>
+
+            </div>
+        </div>
+        <div class="scu-information">
+            SCU INFORMATION<br>
+            <div style="font-weight: bold;">
+            Date : 24/07/2024 19:55:24<br>
+            Control Unit Number : KRACU0200035493<br>
+            INVOICE NUMBER : KRACU0200035493/10<br>
+            Internal Data : DTTF-SRHD-6X4A-IXKL-XUT4-RFU6-TI<br>
+            Receipt Signature : IRTO-PFTR-SMXP-YWQ3<br>
+        <div style="border-top: 1px dashed #333; padding-bottom: 1vh; "></div>
+
+            Receipt Number :<br>
+            Date : 24/07/2024 19:55:24
+
+        </div>
+        </div>
+        <div class="footer">
+            End of Legal Receipt
+
+        </div>
     </div>
 </body>
 </html>
